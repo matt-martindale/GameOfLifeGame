@@ -64,7 +64,7 @@ class Grid: SKSpriteNode {
                 currentCreature.neighborCount = 0
                 
                 for innerGridX in (gridX - 1)...(gridX + 1) {
-                    if innerGridX < 0 || innerGridX <= columns { continue }
+                    if innerGridX < 0 || innerGridX >= columns { continue }
                     for innerGridY in (gridY - 1)...(gridY + 1) {
                         if innerGridY < 0 || innerGridY >= rows { continue }
                         if innerGridX == gridX && innerGridY == gridY { continue }
@@ -79,33 +79,24 @@ class Grid: SKSpriteNode {
     }
     
     func updateCreatures() {
-      /* Process array and update creature status */
-
-      /* Reset population counter */
       population = 0
-
-      /* Loop through columns */
       for gridX in 0..<columns {
-
-          /* Loop through rows */
           for gridY in 0..<rows {
-
-              /* Grab creature at grid position */
               let currentCreature = gridArray[gridX][gridY]
 
-              /* Check against game of life rules */
               switch currentCreature.neighborCount {
               case 3:
                   currentCreature.isAlive = true
+                print("alive")
                   break;
               case 0...1, 4...8:
                   currentCreature.isAlive = false
+                print("dead")
                   break;
               default:
                   break;
               }
 
-              /* Refresh population count */
               if currentCreature.isAlive { population += 1 }
           }
       }
