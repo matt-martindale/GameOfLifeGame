@@ -19,6 +19,7 @@ class GameScene: SKScene {
     var pauseButton: MSButtonNode!
 
     override func didMove(to view: SKView) {
+        
         gridNode = childNode(withName: "gridNode") as? Grid
         
         stepButton = childNode(withName: "stepButton") as? MSButtonNode
