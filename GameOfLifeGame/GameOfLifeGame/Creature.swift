@@ -21,7 +21,7 @@ class Creature: SKSpriteNode {
         let texture = SKTexture(imageNamed: "bubble")
         super.init(texture: texture, color: UIColor.clear, size: texture.size())
         zPosition = 1
-        anchorPoint = CGPoint(x: 0, y: 0)
+        anchorPoint = CGPoint(x: -0.30, y: -0.30)
     }
 
     required init?(coder aDecoder: NSCoder) {

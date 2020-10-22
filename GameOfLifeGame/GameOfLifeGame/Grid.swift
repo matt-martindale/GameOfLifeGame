@@ -24,6 +24,8 @@ class Grid: SKSpriteNode {
         let touch = touches.first!
         let location = touch.location(in: self)
         
+        print(location)
+        
         let gridX = Int(location.x) / cellWidth
         let gridY = Int(location.y) / cellHeight
         
@@ -39,15 +41,6 @@ class Grid: SKSpriteNode {
         populateGrid()
     }
     
-    func addCreatureAtGrid(x: Int, y: Int) {
-        let creature = Creature()
-        let gridPosition = CGPoint(x: x*cellWidth, y: y*cellWidth)
-        creature.position = gridPosition
-        creature.isAlive = false
-        addChild(creature)
-        gridArray[x].append(creature)
-    }
-    
     func populateGrid() {
         for gridX in 0..<columns {
             gridArray.append([])
@@ -55,6 +48,16 @@ class Grid: SKSpriteNode {
                 addCreatureAtGrid(x:gridX, y:gridY)
             }
         }
+    }
+    
+    func addCreatureAtGrid(x: Int, y: Int) {
+        let creature = Creature()
+        let gridPosition = CGPoint(x: x*cellWidth, y: y*cellWidth)
+        print(gridPosition)
+        creature.position = gridPosition
+        creature.isAlive = false
+        addChild(creature)
+        gridArray[x].append(creature)
     }
     
     func countNeighbors() {
