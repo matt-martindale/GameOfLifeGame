@@ -19,6 +19,8 @@
 		C98D6A77253E868C000944BA /* Creature.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98D6A76253E868C000944BA /* Creature.swift */; };
 		C98D6A7C253FCDAF000944BA /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C98D6A7B253FCDAF000944BA /* Launch Screen.storyboard */; };
 		C98D6A8425426AE5000944BA /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98D6A8325426AE5000944BA /* InfoViewController.swift */; };
+		C98D6A89254279C5000944BA /* MyParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = C98D6A88254279C5000944BA /* MyParticle.sks */; };
+		C98D6A8E25427C80000944BA /* rain.sks in Resources */ = {isa = PBXBuildFile; fileRef = C98D6A8D25427C80000944BA /* rain.sks */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +57,8 @@
 		C98D6A76253E868C000944BA /* Creature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Creature.swift; sourceTree = "<group>"; };
 		C98D6A7B253FCDAF000944BA /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		C98D6A8325426AE5000944BA /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
+		C98D6A88254279C5000944BA /* MyParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MyParticle.sks; sourceTree = "<group>"; };
+		C98D6A8D25427C80000944BA /* rain.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = rain.sks; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +120,8 @@
 				C98D6A76253E868C000944BA /* Creature.swift */,
 				C98D6A7B253FCDAF000944BA /* Launch Screen.storyboard */,
 				C98D6A8325426AE5000944BA /* InfoViewController.swift */,
+				C98D6A88254279C5000944BA /* MyParticle.sks */,
+				C98D6A8D25427C80000944BA /* rain.sks */,
 			);
 			path = GameOfLifeGame;
 			sourceTree = "<group>";
@@ -224,9 +230,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				C98D6A3B253E826A000944BA /* Main.storyboard in Resources */,
+				C98D6A89254279C5000944BA /* MyParticle.sks in Resources */,
 				C98D6A32253E826A000944BA /* GameScene.sks in Resources */,
 				C98D6A3D253E826C000944BA /* Assets.xcassets in Resources */,
 				C98D6A7C253FCDAF000944BA /* Launch Screen.storyboard in Resources */,
+				C98D6A8E25427C80000944BA /* rain.sks in Resources */,
 				C98D6A34253E826A000944BA /* Actions.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

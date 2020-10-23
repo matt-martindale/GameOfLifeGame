@@ -1,9 +1,8 @@
 //
 //  MSButtonNode.swift
-//  Make School
+//  GameOfLifeGame
 //
-//  Created by Martin Walsh on 20/02/2016.
-//  Copyright (c) 2016 Make School. All rights reserved.
+//  Created by Matthew Martindale on 10/19/20.
 //
 
 import SpriteKit

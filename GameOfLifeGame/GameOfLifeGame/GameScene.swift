@@ -25,6 +25,8 @@ class GameScene: SKScene {
 
     override func didMove(to view: SKView) {
         
+        addParticleEmitter()
+        
         gridNode = childNode(withName: "gridNode") as? Grid
         
         stepButton = childNode(withName: "stepButton") as? MSButtonNode
@@ -109,6 +111,19 @@ class GameScene: SKScene {
         let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "infoVC") as! InfoViewController
         self.view?.window?.rootViewController?.present(vc, animated: true, completion: nil)
+    }
+    
+    private func addParticleEmitter() {
+        if let atomCloud = SKEmitterNode(fileNamed: "MyParticle.sks") {
+            atomCloud.zPosition = 3
+            atomCloud.position = CGPoint(x: 140, y: 350)
+            atomCloud.name = "atomCloud"
+            atomCloud.targetNode = self
+            
+            addChild(atomCloud)
+        } else {
+            print("no particle")
+        }
     }
     
 }
