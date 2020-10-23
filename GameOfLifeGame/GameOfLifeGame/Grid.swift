@@ -106,10 +106,41 @@ class Grid: SKSpriteNode {
         generation += 1
     }
     
+    func clearGrid() {
+        for gridX in 0..<columns {
+            for gridY in 0..<rows {
+                gridArray[gridX][gridY].isAlive = false
+            }
+        }
+        generation = 0
+        population = 0
+    }
+    
     func blinker() {
+        clearGrid()
         gridArray[3][3].isAlive = true
         gridArray[4][3].isAlive = true
         gridArray[5][3].isAlive = true
+    }
+    
+    func glider() {
+        clearGrid()
+        blinker()
+        gridArray[5][4].isAlive = true
+        gridArray[4][5].isAlive = true
+    }
+    
+    func bloomer() {
+        clearGrid()
+        gridArray[3][4].isAlive = true
+        gridArray[4][4].isAlive = true
+        gridArray[5][4].isAlive = true
+        gridArray[6][4].isAlive = true
+        gridArray[3][3].isAlive = true
+        gridArray[4][2].isAlive = true
+        gridArray[6][5].isAlive = true
+        gridArray[5][6].isAlive = true
+        
     }
     
 }

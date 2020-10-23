@@ -20,6 +20,8 @@ class GameScene: SKScene {
     var clearButton: MSButtonNode!
     var infoButton: MSButtonNode!
     var blinkerButton: MSButtonNode!
+    var gliderButton: MSButtonNode!
+    var bloomerButton: MSButtonNode!
 
     override func didMove(to view: SKView) {
         
@@ -33,6 +35,8 @@ class GameScene: SKScene {
         clearButton = childNode(withName: "clearButton") as? MSButtonNode
         infoButton = childNode(withName: "infoButton") as? MSButtonNode
         blinkerButton = childNode(withName: "blinkerButton") as? MSButtonNode
+        gliderButton = childNode(withName: "gliderButton") as? MSButtonNode
+        bloomerButton = childNode(withName: "bloomerButton") as? MSButtonNode
         
         stepButton.selectedHandler = {
             self.stepSimulation()
@@ -53,15 +57,10 @@ class GameScene: SKScene {
             self?.isPaused = true
         }
         
-        clearButton.selectedHandler = { [weak self] in
+        clearButton.selectedHandler = {
+            [weak self] in
             guard let self = self else { return }
-            for gridX in 0..<self.gridNode.columns {
-                for gridY in 0..<self.gridNode.rows {
-                    self.gridNode.gridArray[gridX][gridY].isAlive = false
-                }
-            }
-            self.gridNode.generation = 0
-            self.gridNode.population = 0
+            self.gridNode.clearGrid()
             self.updateStats()
         }
         
@@ -73,6 +72,16 @@ class GameScene: SKScene {
         blinkerButton.selectedHandler = { [weak self] in
             guard let self = self else { return }
             self.gridNode.blinker()
+        }
+        
+        gliderButton.selectedHandler = { [weak self] in
+            guard let self = self else { return }
+            self.gridNode.glider()
+        }
+        
+        bloomerButton.selectedHandler = { [weak self] in
+            guard let self = self else { return }
+            self.gridNode.bloomer()
         }
         
     }
