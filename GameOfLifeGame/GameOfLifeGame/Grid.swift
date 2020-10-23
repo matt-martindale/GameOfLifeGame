@@ -87,11 +87,9 @@ class Grid: SKSpriteNode {
               switch currentCreature.neighborCount {
               case 3:
                   currentCreature.isAlive = true
-                print("alive")
                   break;
               case 0...1, 4...8:
                   currentCreature.isAlive = false
-                print("dead")
                   break;
               default:
                   break;

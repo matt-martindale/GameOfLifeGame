@@ -62,6 +62,12 @@ class GameScene: SKScene {
             self.gridNode.population = 0
             self.updateStats()
         }
+        
+        infoButton.selectedHandler = { [weak self] in
+            guard let self = self else { return }
+            self.presentInfoVC()
+        }
+        
     }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -82,4 +88,11 @@ class GameScene: SKScene {
         populationLabel.text = String(gridNode.population)
         generationLabel.text = String(gridNode.generation)
     }
+    
+    private func presentInfoVC() {
+        let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "infoVC") as! InfoViewController
+        self.view?.window?.rootViewController?.present(vc, animated: true, completion: nil)
+    }
+    
 }

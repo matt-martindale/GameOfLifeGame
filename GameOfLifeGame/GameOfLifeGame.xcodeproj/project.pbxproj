@@ -18,6 +18,7 @@
 		C98D6A72253E8657000944BA /* Grid.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98D6A71253E8657000944BA /* Grid.swift */; };
 		C98D6A77253E868C000944BA /* Creature.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98D6A76253E868C000944BA /* Creature.swift */; };
 		C98D6A7C253FCDAF000944BA /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C98D6A7B253FCDAF000944BA /* Launch Screen.storyboard */; };
+		C98D6A8425426AE5000944BA /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98D6A8325426AE5000944BA /* InfoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		C98D6A71253E8657000944BA /* Grid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Grid.swift; sourceTree = "<group>"; };
 		C98D6A76253E868C000944BA /* Creature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Creature.swift; sourceTree = "<group>"; };
 		C98D6A7B253FCDAF000944BA /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		C98D6A8325426AE5000944BA /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +115,7 @@
 				C98D6A71253E8657000944BA /* Grid.swift */,
 				C98D6A76253E868C000944BA /* Creature.swift */,
 				C98D6A7B253FCDAF000944BA /* Launch Screen.storyboard */,
+				C98D6A8325426AE5000944BA /* InfoViewController.swift */,
 			);
 			path = GameOfLifeGame;
 			sourceTree = "<group>";
@@ -252,6 +255,7 @@
 				C98D6A36253E826A000944BA /* GameScene.swift in Sources */,
 				C98D6A38253E826A000944BA /* GameViewController.swift in Sources */,
 				C98D6A77253E868C000944BA /* Creature.swift in Sources */,
+				C98D6A8425426AE5000944BA /* InfoViewController.swift in Sources */,
 				C98D6A30253E826A000944BA /* AppDelegate.swift in Sources */,
 				C98D6A72253E8657000944BA /* Grid.swift in Sources */,
 				C98D6A6A253E82DB000944BA /* MSButtonNode.swift in Sources */,
