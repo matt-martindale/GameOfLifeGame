@@ -19,6 +19,7 @@ class GameScene: SKScene {
     var pauseButton: MSButtonNode!
     var clearButton: MSButtonNode!
     var infoButton: MSButtonNode!
+    var blinkerButton: MSButtonNode!
 
     override func didMove(to view: SKView) {
         
@@ -31,6 +32,7 @@ class GameScene: SKScene {
         pauseButton = childNode(withName: "pauseButton") as? MSButtonNode
         clearButton = childNode(withName: "clearButton") as? MSButtonNode
         infoButton = childNode(withName: "infoButton") as? MSButtonNode
+        blinkerButton = childNode(withName: "blinkerButton") as? MSButtonNode
         
         stepButton.selectedHandler = {
             self.stepSimulation()
@@ -66,6 +68,11 @@ class GameScene: SKScene {
         infoButton.selectedHandler = { [weak self] in
             guard let self = self else { return }
             self.presentInfoVC()
+        }
+        
+        blinkerButton.selectedHandler = { [weak self] in
+            guard let self = self else { return }
+            self.gridNode.blinker()
         }
         
     }

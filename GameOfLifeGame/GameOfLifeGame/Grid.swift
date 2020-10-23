@@ -106,4 +106,10 @@ class Grid: SKSpriteNode {
         generation += 1
     }
     
+    func blinker() {
+        gridArray[3][3].isAlive = true
+        gridArray[4][3].isAlive = true
+        gridArray[5][3].isAlive = true
+    }
+    
 }
