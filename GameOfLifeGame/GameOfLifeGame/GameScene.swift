@@ -17,6 +17,8 @@ class GameScene: SKScene {
     var generationLabel: SKLabelNode!
     var playButton: MSButtonNode!
     var pauseButton: MSButtonNode!
+    var clearButton: MSButtonNode!
+    var infoButton: MSButtonNode!
 
     override func didMove(to view: SKView) {
         
@@ -27,6 +29,8 @@ class GameScene: SKScene {
         generationLabel = childNode(withName: "generationLabel") as? SKLabelNode
         playButton = childNode(withName: "playButton") as? MSButtonNode
         pauseButton = childNode(withName: "pauseButton") as? MSButtonNode
+        clearButton = childNode(withName: "clearButton") as? MSButtonNode
+        infoButton = childNode(withName: "infoButton") as? MSButtonNode
         
         stepButton.selectedHandler = {
             self.stepSimulation()
@@ -46,6 +50,18 @@ class GameScene: SKScene {
         pauseButton.selectedHandler = { [weak self] in
             self?.isPaused = true
         }
+        
+        clearButton.selectedHandler = { [weak self] in
+            guard let self = self else { return }
+            for gridX in 0..<self.gridNode.columns {
+                for gridY in 0..<self.gridNode.rows {
+                    self.gridNode.gridArray[gridX][gridY].isAlive = false
+                }
+            }
+            self.gridNode.generation = 0
+            self.gridNode.population = 0
+            self.updateStats()
+        }
     }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -59,7 +75,11 @@ class GameScene: SKScene {
     @objc func stepSimulation() {
       gridNode.evolve()
 
-      populationLabel.text = String(gridNode.population)
-      generationLabel.text = String(gridNode.generation)
+      updateStats()
+    }
+    
+    private func updateStats() {
+        populationLabel.text = String(gridNode.population)
+        generationLabel.text = String(gridNode.generation)
     }
 }
