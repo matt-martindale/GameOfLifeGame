@@ -22,6 +22,7 @@ class GameScene: SKScene {
     var blinkerButton: MSButtonNode!
     var gliderButton: MSButtonNode!
     var bloomerButton: MSButtonNode!
+    
 
     override func didMove(to view: SKView) {
         
